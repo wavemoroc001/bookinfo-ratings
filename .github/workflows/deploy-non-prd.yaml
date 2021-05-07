@@ -8,6 +8,8 @@ jobs:
   build:
     runs-on: ubuntu-20.04
     steps:
+      - name: Tell me Which branche
+        run: echo "$GITHUB_REF"
       - name: Set env
         run: echo "ENV_NAME=$( [ "$GITHUB_REF" == "refs/heads/master" ] && echo 'uat' || echo ${GITHUB_REF##*/} )" >> $GITHUB_ENV
       - name: Login to GitHub Container Registry
