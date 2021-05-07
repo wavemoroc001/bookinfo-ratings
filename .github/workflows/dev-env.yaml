@@ -50,9 +50,9 @@ jobs:
                 "COMMIT_SHA": "${{ github.sha }}"
               }
             }
-    acceptance-test:
-       needs: deploy
-       runs-on: ubuntu-20.04
-       steps:
-         - name: Check Health
-           run: curl http://bookinfo.dev.opsta.net/student50/ratings/health | grep "Ratings is working"
+  test:
+    needs: deploy
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Check Health
+        run: curl http://bookinfo.dev.opsta.net/student50/ratings/health | grep "Ratings is working"
