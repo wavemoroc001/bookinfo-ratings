@@ -10,8 +10,6 @@ jobs:
     steps:
       - name: Set env
         run: echo "ENV_NAME=$( [ "$GITHUB_REF" == "refs/heads/master" ] && echo 'uat' || echo ${GITHUB_REF##*/} )" >> $GITHUB_ENV
-      - name: Tell me Which branche
-        run: echo ${{ env.ENV_NAME }}
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v1
         with:
@@ -30,6 +28,8 @@ jobs:
     needs: build
     runs-on: ubuntu-20.04
     steps:
+      - name: Tell me Which branche
+        run: echo ${{ env.ENV_NAME }}
       - name: Checkout code
         uses: actions/checkout@v2
       - name: get-credentials
