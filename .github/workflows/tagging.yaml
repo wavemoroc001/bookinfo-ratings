@@ -35,4 +35,4 @@ jobs:
         with:
           src: ghcr.io/wavemoroc001/bookinfo-ratings:uat
           dst: |
-            ghcr.io/[GITHUB_USER]/bookinfo-ratings:${{needs.git-tag.outputs.tag-version}}
+            ghcr.io/wavemoroc001/bookinfo-ratings:${{needs.git-tag.outputs.tag-version}}
