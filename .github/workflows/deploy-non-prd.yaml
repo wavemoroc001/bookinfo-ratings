@@ -40,7 +40,7 @@ jobs:
         with:
           helm: helm3
           release: bookinfo-${{ env.ENV_NAME }}-ratings
-          namespace: student85-bookinfo-${{ env.ENV_NAME }}
+          namespace: student50-bookinfo-${{ env.ENV_NAME }}
           chart: k8s/helm
           value-files: k8s/helm-values/values-bookinfo-${{ env.ENV_NAME }}-ratings.yaml
           values: |
